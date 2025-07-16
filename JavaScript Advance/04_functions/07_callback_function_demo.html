@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Callback Function Demo</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			text-align: center;
+			margin-top: 40px;
+		}
+
+		button {
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		#result {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>JavaScript Callback Function Demo</h2>
+
+	<button onclick="fetchUserData(displayData)">Get User Data</button>
+
+	<h3 id="result"></h3>
+
+	<script>
+		function fetchUserData(callback) {
+			setTimeout(() => {
+				const user = {
+					name: "Tom Hanks",
+					age: 30
+				};
+				callback(user)
+			}, 2000);
+		}
+
+		function displayData(user) {
+			document.getElementById("result").innerHTML = `Name: ${user.name}, Age: ${user.age}`
+		}
+	</script>
+
+</body>
+
+</html>

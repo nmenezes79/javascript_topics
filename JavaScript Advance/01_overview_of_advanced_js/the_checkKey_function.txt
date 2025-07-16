@@ -1,0 +1,55 @@
+The checkKey function is designed to validate whether the user has entered the correct key for a specific gate and provide feedback based on the validation result
+
+Function Parameters
+1. gateNumber: This represents the number of the gate being checked (e.g., Gate 1, Gate 2, etc.). It is used to dynamically identify the relevant HTML elements for input and output.
+
+2. correctKey: This is the correct key (numeric value) for the specific gate, against which the user's input will be compared.
+
+Function Logic 
+
+const input = document.getElementById(`key-${gateNumber}`);
+
+1. Retrieve User Input
+This selects the input field corresponding to the gate (e.g., key-1 for Gate 1) using gateNumber.
+The user is expected to input their key in this field.
+
+2. Retrieve Message Element 
+const message = document.getElementById(`message-${gateNumber}`);
+
+This selects the message display element for the same gate (e.g., message-1 for Gate 1), where feedback will be shown.
+
+3. Parse the Input Value 
+
+const keyValue = parseInt(input.value, 10);
+
+The function converts the value entered in the input field to an integer using parseInt. The 10 specifies that the input is in base 10 (decimal).
+
+If the input is not a valid number, keyValue will be NaN.
+
+4. Check the Input Against the Correct Key
+
+if (keyValue === correctKey) {}
+
+The function compares the user-provided key (keyValue) with the correctKey.
+
+If they match, the gate is considered "unlocked."
+
+5. Update the Message Based on Validation
+
+If the key is correct
+message.textContent = `Gate ${gateNumber} Unlocked!`;
+message.style.color = 'white';
+The message displays a success message in white text.
+
+If the key is incorrect
+message.textContent = `Wrong Key! Try Again.`;
+message.style.color = 'red';
+The message displays an error in red text.
+
+If the user enters 1234 into the input field key-1 and clicks the button, the message Gate 1 Unlocked! will appear in white. If they enter an incorrect key, the message Wrong Key! Try Again. will appear in red.
+
+
+
+
+
+

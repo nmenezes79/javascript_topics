@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap v4 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Alice and Bob's Treasur Hunt</title>
+</head>
+
+<body>
+	<h4 class=" display-4 text-center my-4 text-primary">Alice and Bob's Treasure Hunt</h4>
+
+	<div class="jumbotron container text-center">
+		<p class="lead">Help Alice and Bob unlock the gates by matching the correct key number with the gate number</p>
+	</div>
+
+	<div class="container">
+		<div class="row d-flex justify-content-around">
+			<!-- Gate 1 -->
+			<div class="col-md-3 bg-dark p-4 text-white" id="gate-1">
+				<h4>Gate 1</h4>
+				<p class="lead">Enter The Key Number</p>
+				<div class="input-group">
+					<input type="number" id="key-1" placeholder="Key Number">
+					<button onclick="checkKey(1, 7)" type="button" class="btn btn-outline-warning my-4">Unlock</button>
+				</div>
+				<p class="lead" id="message-1"></p>
+			</div>
+			<!-- Gate 2 -->
+			<div class="col-md-3 bg-warning p-4" id="gate-2">
+				<h4>Gate 2</h4>
+				<p class="lead">Enter The Key Number</p>
+				<div class="input-group">
+					<input type="number" id="key-2" placeholder="Key Number">
+					<button onclick="checkKey(2, 14)" type="button" class="btn btn-outline-dark my-4">Unlock</button>
+				</div>
+				<p class="lead" id="message-2"></p>
+			</div>
+			<!-- Gate 3 -->
+			<div class="col-md-3 bg-dark p-4 text-white" id="gate-3">
+				<h4>Gate 3</h4>
+				<p class="lead">Enter The Key Number</p>
+				<div class="input-group">
+					<input type="number" id="key-3" placeholder="Key Number">
+					<button onclick="checkKey(3, 21)" type="button" class="btn btn-outline-warning my-4">Unlock</button>
+				</div>
+				<p class="lead" id="message-3"></p>
+			</div>
+		</div>
+	</div>
+
+	<div style="margin-bottom: 100px;"></div>
+
+	<script>
+		function checkKey(gateNumber, correctKey) {
+			// Retrieve the User Input
+			const input = document.getElementById(`key-${gateNumber}`);
+			// Retrieve Message Element
+			const message = document.getElementById(`message-${gateNumber}`);
+			// Parse the Input Value
+			const keyValue = parseInt(input.value, 10);
+
+			// Check the Input Against the Correct Key
+			if(keyValue === correctKey) {
+				// Update the message based on Validation if the key is correct
+				message.textContent = `Gate ${gateNumber} Unlocked!`;
+				message.style.color = 'white';
+			} else {
+				// If the key is incorrect
+				message.textContent = `Wrong Key! Try Again`;
+				message.style.color = 'red';
+			}
+		}
+	</script>
+</body>
+
+</html>

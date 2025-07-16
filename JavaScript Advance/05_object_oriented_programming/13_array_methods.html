@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap v4 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>session_20</title>
+</head>
+
+<body>
+	<h4 class=" display-4 text-center my-4 text-primary">JavaScript Object Oriented Programming - Array Methods</h4>
+
+	<script>
+		let fruits = ["Apple", "Banana", "Mango", "Grapes"];
+		console.log(fruits);
+
+		// pop() - Removes the last element from an array
+		fruits.pop();
+		console.log(fruits);
+		fruits.pop();
+		console.log(fruits);
+
+		// push() - Add an element to the end of an array
+		fruits.push("Pineapple");
+		console.log(fruits);
+
+		// unshift() - Adds an element to the beginning of an array
+		let colors = ["Blue", "Green"];
+		console.log(colors);
+		colors.unshift("Red");
+		console.log(colors);
+
+		// shift() - Remove the first element from an array
+		let cities = ["London", "Paris", "New York"];
+		console.log(cities);
+		cities.shift();
+		console.log(cities);
+
+		// concat() - Merges 2 or more arrays
+		let arr1 = [1, 2];
+		let arr2 = [3, 4];
+		let merged = arr1.concat(arr2);
+		console.log(merged);
+
+		// slice() - Extract a portion of an array
+		let animals = ["Dog", "Cat", "Elephant", "Tiger"];
+		let sliced = animals.slice(1, 3);
+		console.log(sliced); //  ['Cat', 'Elephant']
+
+		// splice() - Adds/Removes elements from an array
+		let months = ["Jan", "Feb", "Mar", "May"];
+		console.log(months);
+		months.splice(3, 0, "Apr");
+		console.log(months); // 
+
+		// indexof() - Find the index of an element
+		let numbers = [10, 20, 30, 40, 50];
+		console.log(numbers.indexOf(30)); // 2
+
+		// includes() – Checks if an array contains a value
+		let cars = ["BMW", "Toyota", "Tesla"];
+		console.log(cars.includes("Toyota")); // true
+
+		// forEach() – Iterates over an array
+		let scores = [10, 20, 30];
+		scores.forEach((score) => console.log(score * 2)); // 20 40 60
+
+		// map() – Creates a new array by applying a function
+		let nums = [1, 2, 3];
+		let squared = nums.map(num => num * num);
+		console.log(squared); // [1, 4, 9]
+
+		// filter() – Creates a new array with elements that pass a condition
+		let ages = [10, 20, 30, 18, 40];
+		let adults = ages.filter(age => age >= 18);
+		console.log(adults); // [20, 30, 18, 40]
+
+		// reduce() – Reduces an array to a single value
+		// acc - starts with an initial accumulator (acc) value of 0
+		// Iterates over the array, adding each element (curr) to acc
+		// The result is the total sum of all element in the array
+		let values = [1, 2, 3, 4];
+		let sum = values.reduce((acc, curr) => acc + curr, 0);
+		console.log(sum); // 10
+
+		// find() – Returns the first element that matches a condition
+		// The find()method returns the first element in the array that satisfies the given condition
+		// The condition num % 2 === 0 check for even numbers
+		// The array [3, 7, 10, 15, 18] contains 2 even numbers are 10 and 18
+		// Since find() returns the first matching element, it stops at 10.
+		const newNumbers = [3, 7, 10, 15, 18];
+		const firstEven = newNumbers.find(num => num % 2 === 0);
+		console.log(firstEven); // Output 10
+
+	</script>
+
+</body>
+
+</html>
